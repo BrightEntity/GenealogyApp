@@ -14,12 +14,14 @@ function MovableArea(svgAreaID) {
     $(this.area).on('mousedown', function (e) {
         this.posX = e.pageX
         this.posY = e.pageY
-        debugger;
+        $(window).on("mousemove", function (e) {
+            console.log('position : X='+e.pageX +' Y='+e.pageY)
+            //this.svg.select('#movable').transform
+            
+        })
     });
 
-    $(this.area).on("mousemove", function (e) {
-        //this.svg.select('#movable').transform
-    })
+    
 
 
     return Snap(svgAreaID)
