@@ -112,6 +112,8 @@
     <Content Include="scripts\app.js" />
     <Content Include="scripts\FalGenealogy.js" />
     <Content Include="scripts\Genealogy.js" />
+    <Content Include="scripts\jquery-3.0.0.js" />
+    <Content Include="scripts\MovableArea.js" />
     <Content Include="scripts\snap.svg.js" />
     <Content Include="Web.config" />
   </ItemGroup>
