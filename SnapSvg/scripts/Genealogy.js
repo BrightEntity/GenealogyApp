@@ -87,6 +87,22 @@ GenealogyArea.prototype = {
     }
 }
 
+var GenealogyElement = function(options, genealogyArea) {
+    this.posX = (options.posX === undefined) ? 0 : options.posX;
+    this.posY = (options.posY === undefined) ? 0 : options.posY;
+    this.width = (options.width === undefined) ? 50 : options.width;
+    this.height = (options.height === undefined) ? 30 : options.height;
+    this.horizontalMargin = (options.horizontalMargin === undefined) ? 0 : options.horizontalMargin;
+    this.verticalMargin = (options.verticalMargin === undefined) ? 0 : options.verticalMargin;
+    //this.level = getGenealogyLevel(genealogyProfile, genealogyContext, 0)
+    var rect = genealogyArea.rect(0, 0, this.width, this.height)
+    var text = genealogyArea.text(this.posX / 2, this.posY / 2, genealogyProfile.Name)
+    text.attr({ style: "text-anchor: middle;" })
+    this.element = genealogyArea.group(rect, text)
+    this.element.translate(this.posX, this.posY);
+}
+
+/*
 var GenealogyElement = function (genealogyProfile, genealogyArea, posX = 0, posY = 0, width=100, height=50, horizontalMargin = 0, verticalMargin = 0) {
     this.posX = posX
     this.posY = posY    
@@ -102,6 +118,7 @@ var GenealogyElement = function (genealogyProfile, genealogyArea, posX = 0, posY
     this.element.translate(this.posX, this.posY);
         
 }
+*/
 
     GenealogyElement.prototype = {
         horizontalLevel: 0,
